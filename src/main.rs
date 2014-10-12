@@ -65,7 +65,7 @@ fn main() {
 
     append_text_column(&mut tree);
 
-    // both of these fail, but work fine their
+    // both of these fail, but work fine when their
     // contents are moved into the main function
     add_row_via_ffi(&store);
     add_row_via_wrapper(&store);
