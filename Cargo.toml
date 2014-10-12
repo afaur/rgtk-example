@@ -6,4 +6,4 @@ authors = ["oakes <zsoakes@gmail.com>"]
 
 [dependencies.rgtk]
 
-git = "https://github.com/oakes/rgtk-example.git"
+git = "https://github.com/oakes/rgtk.git"
