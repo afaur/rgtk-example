@@ -22,10 +22,10 @@ fn add_row_via_ffi(store: &gtk::ListStore) {
 
         gtk::ffi::gtk_list_store_append(ptr, &mut iter);
 
-        let ptr = store.get_pointer();
-        println!("{}", ptr); // invalid
+        let new_ptr = store.get_pointer();
+        println!("{}", new_ptr); // invalid
 
-        gtk::ffi::gtk_list_store_set(ptr, &mut iter, 0i, "I'm a row".to_c_str().unwrap(), -1i);
+        gtk::ffi::gtk_list_store_set(new_ptr, &mut iter, 0i, "I'm a row".to_c_str().unwrap(), -1i);
     }
 }
 
@@ -38,8 +38,8 @@ fn add_row_via_wrapper(store: &gtk::ListStore) {
 
     store.append(&iter);
 
-    let ptr = store.get_pointer();
-    println!("{}", ptr); // invalid
+    let new_ptr = store.get_pointer();
+    println!("{}", new_ptr); // invalid
 
     store.set_string(&iter, 0, "I'm a row");
 }
