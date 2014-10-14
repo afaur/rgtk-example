@@ -29,6 +29,7 @@ fn add_row_via_ffi(store: &gtk::ListStore) {
     }
 }
 
+/*
 fn add_row_via_wrapper(store: &gtk::ListStore) {
     let mut iter_raw = gtk::ffi::C_GtkTreeIter;
     let iter = gtk::TreeIter::wrap_pointer(&mut iter_raw);
@@ -43,6 +44,7 @@ fn add_row_via_wrapper(store: &gtk::ListStore) {
 
     store.set_string(&iter, 0, "I'm a row");
 }
+*/
 
 fn main() {
     gtk::init();
@@ -65,10 +67,10 @@ fn main() {
 
     append_text_column(&mut tree);
 
-    // both of these fail, but work fine when their
+    // this crashes, but works fine when its
     // contents are moved into the main function
+    // or an second argument is passed to it
     add_row_via_ffi(&store);
-    add_row_via_wrapper(&store);
 
     window.add(&tree);
     window.show_all();
